@@ -13,11 +13,11 @@ function getComputerChoice() {
     return choice
 }
 
-function game() {
+function playGame() {
     let playerChoice, computerChoice
     let scorePlayer = 0, scoreComputer = 0
 
-    for (let start = 0; start < 5; start++) {
+    for (let gameRound = 1; gameRound < 6; gameRound++) {
         playerChoice = prompt("what is your choice").toLowerCase()
         computerChoice = getComputerChoice()
 
@@ -44,13 +44,27 @@ function game() {
                     }
                 }
             }
+            console.log("Round ", gameRound)
+            console.log("PLAYER ", scorePlayer, " : ", scoreComputer, " COMPUTER")
         } else {
             alert("type rock, paper or scissor!")
-            start--
+            gameRound--
         }
     }
-    console.log("PLAYER ", scorePlayer, " : ", scoreComputer, " COMPUTER")
+    
+    if (scorePlayer > scoreComputer) {
+        console.log("PLAYER WON!")
+    } else if (scorePlayer === scoreComputer) {
+        console.log("TIE!")
+    } else {
+        console.log("COMPUTER WON!")
+    }
+
+    let playAgain = prompt("play again? YES or NO").toLowerCase()
+
+    if (playAgain === "yes") {
+        playGame()
+    }
 }
 
-game()
-
+playGame()
