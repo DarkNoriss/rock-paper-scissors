@@ -63,6 +63,7 @@ function playGame() {
     let playAgain = prompt("play again? YES or NO").toLowerCase()
 
     if (playAgain === "yes") {
+        console.log("----- NEW GAME -----")
         playGame()
     }
 }
