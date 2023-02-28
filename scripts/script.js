@@ -18,7 +18,7 @@ function playGame() {
     let scorePlayer = 0, scoreComputer = 0
 
     for (let gameRound = 1; gameRound < 6; gameRound++) {
-        playerChoice = prompt("what is your choice").toLowerCase()
+        playerChoice = prompt("ROCK, PAPER or SCISSOR?").toLowerCase()
         computerChoice = getComputerChoice()
 
         if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissor") {
@@ -44,10 +44,10 @@ function playGame() {
                     }
                 }
             }
-            console.log("Round ", gameRound)
+            console.log("Round : ", gameRound)
             console.log("PLAYER ", scorePlayer, " : ", scoreComputer, " COMPUTER")
         } else {
-            alert("type rock, paper or scissor!")
+            alert("Type ROCK, PAPER or SCISSOR!")
             gameRound--
         }
     }
@@ -60,7 +60,7 @@ function playGame() {
         console.log("COMPUTER WON!")
     }
 
-    let playAgain = prompt("play again? YES or NO").toLowerCase()
+    let playAgain = prompt("Play again? YES or NO").toLowerCase()
 
     if (playAgain === "yes") {
         console.log("----- NEW GAME -----")
